@@ -8,7 +8,7 @@ win.tabGroup.animate({ bottom:0 });
 var caller_screen = '';
 if(win.caller_screen) { caller_screen = win.caller_screen; }
 
-var bus_stop_name = '';
+var bus_stop_name = 'Select';
 if(win.bus_stop_name) { bus_stop_name = win.bus_stop_name; }
 
 ////variables..
@@ -37,7 +37,7 @@ var dataView = Ti.UI.createScrollView({ width: mainView.width, height: mainView.
 mainView.add(dataView);
 
 //Table to display options..
-var tblSettings = Ti.UI.createTableView({ width:Titanium.Platform.displayCaps.platformWidth, height:175, top:-5, left:0, separatorColor:'#B9BCC1', scrollable:false, style:Titanium.UI.iPhone.TableViewStyle.GROUPED });
+var tblSettings = Ti.UI.createTableView({ width:Titanium.Platform.displayCaps.platformWidth, height:175, top:-10, left:0, separatorColor:'#B9BCC1', scrollable:false, style:Titanium.UI.iPhone.TableViewStyle.GROUPED });
 dataView.add(tblSettings);
 
 //section for table..
@@ -45,7 +45,7 @@ var sectionSetting = Titanium.UI.createTableViewSection();
 
 //////Time picker for time settingss..
 var value = new Date();
-var pickerTime = Titanium.UI.createPicker({ type:Titanium.UI.PICKER_TYPE_TIME, value:value, bottom:55, zIndex:1 });
+var pickerTime = Titanium.UI.createPicker({ type:Titanium.UI.PICKER_TYPE_TIME, value:value, bottom:70, zIndex:1 });
 // turn on the selection indicator (off by default)
 pickerTime.selectionIndicator = true;
 dataView.add(pickerTime);
@@ -73,7 +73,7 @@ var getRow = function(pData)
 		//click event handler for row click.
 		row.addEventListener('click',function(e){
 			//call function to display screen..
-			if(e.row.win_title == 'Search' && bus_stop_name == "")  {
+			if(e.row.win_title == 'Search' && bus_stop_name == "Select")  {
 				showNewScreen(e.row.win_url, e.row.win_title);
 			}
 			else if(e.row.win_title != 'Search')  {

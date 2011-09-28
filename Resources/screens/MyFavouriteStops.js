@@ -143,7 +143,7 @@ btnEditFav.addEventListener('click',function(e){
 	else if(btnEditFav.title == "Edit")
 	{
 		tblFavourites.editing = true;
-		tblFavourites.editable = true;		
+//		tblFavourites.editable = true;		
 //		tblFavourites.allowsSelectionDuringEditing = true;
 		
 		btnEditFav.title = "Done";

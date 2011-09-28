@@ -12,7 +12,6 @@ var rootWin = Titanium.UI.createWindow({
 	exitOnClose:true
 });
 
-//Ti.UI.orientation = [Titanium.UI.LANDSCAPE_LEFT, Titanium.UI.LANDSCAPE_RIGHT];
 rootWin.orientationModes = [
     Titanium.UI.PORTRAIT,
     Titanium.UI.UPSIDE_PORTRAIT,
@@ -30,6 +29,19 @@ Ti.App.glbConstants = {
 	_searchScreen:'SEARCH_SCREEN',
 	_busStopScreen:'BUS_STOP_SCREEN',
 	_addAlarm:'ADD_ALARM'
+};
+
+//Includes files to initialize databaes and make settings..
+Titanium.include('/includes/AppFunctions.js');
+
+//Initialize databse..
+initDatabase();
+isDataExists();
+
+//Function to print info on console..
+function debugInfo(pTitle, pInfo)
+{
+	Ti.API.info(pTitle + " - " + pInfo);
 };
 
 rootWin.open();
